@@ -5,17 +5,6 @@ module EnvironmentVariables = Rench.EnvironmentVariables;
 module Path = Rench.Path;
 
 describe("Environment", ({describe, _}) => {
-  describe("which", ({test, _}) =>
-    test("can find node executable", ({expect, _}) => {
-      let nodePath = Environment.which("node");
-      switch (nodePath) {
-      | Some(v) =>
-        let exists = Sys.file_exists(v);
-        expect.bool(exists).toBe(true);
-      | None => expect.bool(false).toBe(true)
-      };
-    })
-  );
   describe("getEnvironmentVariables", ({test, _}) =>
     test("PATH is available", ({expect, _}) => {
       let env = Environment.getEnvironmentVariables();
@@ -27,17 +16,5 @@ describe("Environment", ({describe, _}) => {
       | _ => expect.bool(true).toBeFalse()
       };
     })
-  );
-  describe("getExecutingDirectory", ({test, _}) =>
-    test("returns correct path", ({expect, _}) => {
-      let testRunnerPath = Environment.which("TestRunner.exe");
-      switch (testRunnerPath) {
-      | Some(v) =>
-        let expected = Path.dirname(v);
-        let xd = Environment.getExecutingDirectory();
-        expect.string(expected).toEqual(xd);
-      | None => expect.bool(true).toBeFalse()
-      };
-    })
-  );
+  )
 });

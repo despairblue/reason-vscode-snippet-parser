@@ -24,22 +24,15 @@
   "dependencies": {
     "@esy-ocaml/reason": "*",
     "@opam/base": "v0.11.1",
-    "@opam/core": "v0.11.3",
-    "@opam/dune": "*",
-    "@opam/fpath": "^0.7.2",
-    "@opam/lambda-term": "*",
-    "@opam/lwt": "*",
     "@opam/ppx_deriving": "4.4",
     "@opam/ppx_enumerate": "v0.11.1",
     "@opam/ppx_import": "1.6.2",
     "@opam/sedlex": "2.1",
     "@opam/stdio": "v0.11.0",
-    "@reason-native/console": "*",
-    "@reason-native/rely": "*",
-    "ocaml": "4.6.1000",
     "refmterr": "*"
   },
   "devDependencies": {
+    "@reason-native/rely": "*",
     "@opam/merlin": "^3.2.2",
     "ocaml": "~4.7.0",
     "@opam/dune": "^1.7.3"

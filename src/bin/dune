@@ -1,7 +1,0 @@
-(executables
-    (names        JSONParserTestSedlex)
-    (public_names JSONParserTestSedlex)
-    (package Rench)
-    (libraries unix str core Rench.SnippetParserSedlex)
-)
-    

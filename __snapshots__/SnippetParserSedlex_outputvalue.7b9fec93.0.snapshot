@@ -1,4 +1,4 @@
-SnippetParserSedlex › module ${1:M} = ${2:{}};$0
+SnippetParserSedlex › output_value › module ${1:M} = ${2:{}};$0
 TEXT(module)
 TEXT( )
 PLACEHOLDER(${1:TEXT(M)})

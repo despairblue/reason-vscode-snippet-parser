@@ -1,4 +1,4 @@
-SnippetParserSedlex › type ${1:name} ${2:'${3:arg} }=
+SnippetParserSedlex › output_value › type ${1:name} ${2:'${3:arg} }=
 	| ${4:Con${2: '${3:arg}}}
 	;'
 TEXT(type)

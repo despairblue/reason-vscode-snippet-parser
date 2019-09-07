@@ -1,4 +1,4 @@
-SnippetParserSedlex › switch ${1:scrutinee} {
+SnippetParserSedlex › output_value › switch ${1:scrutinee} {
 | ${2:pattern} => ${3:${2:pattern}}
 };
 TEXT(switch)

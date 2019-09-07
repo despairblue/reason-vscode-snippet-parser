@@ -1,4 +1,4 @@
-SnippetParserSedlex › (${1:pattern}) => ${2:${1:pattern}}
+SnippetParserSedlex › output_value › (${1:pattern}) => ${2:${1:pattern}}
 TEXT(()
 PLACEHOLDER(${1:TEXT(pattern)})
 TEXT() => )

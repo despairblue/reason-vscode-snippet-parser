@@ -1,4 +1,4 @@
-SnippetParserSedlex › type ${1:name} ${2:${3:'${4:arg} }= ${5:'${4:arg}}};$0
+SnippetParserSedlex › output_value › type ${1:name} ${2:${3:'${4:arg} }= ${5:'${4:arg}}};$0
 TEXT(type)
 TEXT( )
 PLACEHOLDER(${1:TEXT(name)})

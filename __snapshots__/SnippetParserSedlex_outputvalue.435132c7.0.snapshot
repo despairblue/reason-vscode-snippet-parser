@@ -1,4 +1,4 @@
-SnippetParserSedlex › fun
+SnippetParserSedlex › output_value › fun
 	| ${1:pattern} => ${2:${1:pattern}}
 	;
 TEXT(fun)

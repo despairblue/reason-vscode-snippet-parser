@@ -1,4 +1,4 @@
-SnippetParserSedlex › let ${1:pattern} = {
+SnippetParserSedlex › output_value › let ${1:pattern} = {
 	$0
 };
 TEXT(let)

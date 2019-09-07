@@ -158,7 +158,7 @@ let parse = (buffer, p) => {
     printf("%s\n", show_token(token));
     last_token^;
   };
-  try (MenhirLib.Convert.Simplified.traditional2revised(p, next_token)) {
+  try(MenhirLib.Convert.Simplified.traditional2revised(p, next_token)) {
   | [@implicit_arity] LexError(pos, s) =>
     raise([@implicit_arity] LexError(pos, s))
   | _ => raise(ParseError(last_token^))

@@ -28,7 +28,7 @@ describe("SnippetParserSedlex", ({describe, _}) => {
     List.iter(
       snippet => {
         test(
-          snippet,
+          String.escaped(snippet),
           ({expect, _}) => {
             let svalues = SnippetParserSedlex.Parser.ast_of_string(snippet);
             expect.lines(
@@ -46,7 +46,7 @@ describe("SnippetParserSedlex", ({describe, _}) => {
     List.iter(
       snippet => {
         test(
-          snippet,
+          String.escaped(snippet),
           ({expect, _}) => {
             let svalues = SnippetParserSedlex.Parser.ast_of_string(snippet);
             expect.lines(

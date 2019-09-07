@@ -1,6 +1,4 @@
-SnippetParserSedlex › output_value › switch ${1:scrutinee} {
-| ${2:pattern} => ${3:${2:pattern}}
-};
+SnippetParserSedlex › output_value › switch ${1:scrutinee} {\n| ${2:pattern} => ${3:${2:pattern}}\n};
 TEXT(switch)
 TEXT( )
 PLACEHOLDER(${1:TEXT(scrutinee)})

@@ -1,7 +1,4 @@
-SnippetParserSedlex › output_value › module ${1:M} = (${2:X}: $3{:{}}) => {
-	${4:include ${2:X}}
-	$0
-};
+SnippetParserSedlex › output_value › module ${1:M} = (${2:X}: $3{:{}}) => {\n\t${4:include ${2:X}}\n\t$0\n};
 TEXT(module)
 TEXT( )
 PLACEHOLDER(${1:TEXT(M)})

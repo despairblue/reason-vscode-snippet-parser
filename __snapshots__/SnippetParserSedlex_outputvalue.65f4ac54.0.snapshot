@@ -1,6 +1,4 @@
-SnippetParserSedlex › output_value › type ${1:name} ${2:'${3:arg} }=
-	| ${4:Con${2: '${3:arg}}}
-	;'
+SnippetParserSedlex › output_value › type ${1:name} ${2:'${3:arg} }=\n\t| ${4:Con${2: '${3:arg}}}\n\t;'
 TEXT(type)
 TEXT( )
 PLACEHOLDER(${1:TEXT(name)})

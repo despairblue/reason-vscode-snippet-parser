@@ -1,6 +1,4 @@
-SnippetParserSedlex › output_value › let ${1:pattern} = {
-	$0
-};
+SnippetParserSedlex › output_value › let ${1:pattern} = {\n\t$0\n};
 TEXT(let)
 TEXT( )
 PLACEHOLDER(${1:TEXT(pattern)})

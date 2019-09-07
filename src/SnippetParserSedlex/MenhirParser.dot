@@ -1,0 +1,39 @@
+digraph G {
+orientation = landscape;
+rankdir = LR;
+ratio = compress;
+nt0 [ label="prog'" ] ;
+nt1 [ label="variable_inner" ] ;
+nt2 [ label="variable" ] ;
+nt3 [ label="value" ] ;
+nt4 [ label="text" ] ;
+nt5 [ label="tabstop" ] ;
+nt6 [ label="separated_nonempty_list(COMMA,VARIABLENAME)" ] ;
+nt7 [ label="prog" ] ;
+nt8 [ label="placeholder" ] ;
+nt9 [ label="marker" ] ;
+nt10 [ label="list(value)" ] ;
+nt11 [ label="list(any)" ] ;
+nt12 [ label="choice" ] ;
+nt13 [ label="any" ] ;
+nt0 -> nt7 [ label="" ] ;
+nt1 -> nt11 [ label="" ] ;
+nt2 -> nt1 [ label="" ] ;
+nt3 -> nt4 [ label="" ] ;
+nt3 -> nt9 [ label="" ] ;
+nt6 -> nt6 [ label="" ] ;
+nt7 -> nt10 [ label="" ] ;
+nt8 -> nt11 [ label="" ] ;
+nt9 -> nt2 [ label="" ] ;
+nt9 -> nt5 [ label="" ] ;
+nt9 -> nt8 [ label="" ] ;
+nt9 -> nt12 [ label="" ] ;
+nt10 -> nt3 [ label="" ] ;
+nt10 -> nt10 [ label="" ] ;
+nt11 -> nt11 [ label="" ] ;
+nt11 -> nt13 [ label="" ] ;
+nt12 -> nt6 [ label="" ] ;
+nt13 -> nt4 [ label="" ] ;
+nt13 -> nt9 [ label="" ] ;
+
+}

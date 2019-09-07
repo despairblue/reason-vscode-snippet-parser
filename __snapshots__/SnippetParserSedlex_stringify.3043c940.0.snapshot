@@ -1,0 +1,11 @@
+SnippetParserSedlex › stringify › fun
+	| ${1:pattern} => ${2:${1:pattern}}
+	;
+fun
+
+\t| 
+pattern
+ => 
+pattern
+
+\t;

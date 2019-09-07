@@ -40,5 +40,23 @@ describe("SnippetParserSedlex", ({describe, _}) => {
       },
       snippets,
     )
-  })
+  });
+
+  describe("stringify", ({test, _}) => {
+    List.iter(
+      snippet => {
+        test(
+          snippet,
+          ({expect, _}) => {
+            let svalues = SnippetParserSedlex.Parser.ast_of_string(snippet);
+            expect.lines(
+              List.map(SnippetParserSedlex.Snippet.stringify, svalues),
+            ).
+              toMatchSnapshot();
+          },
+        )
+      },
+      snippets,
+    )
+  });
 });

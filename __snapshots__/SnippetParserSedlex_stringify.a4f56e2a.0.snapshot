@@ -1,0 +1,9 @@
+SnippetParserSedlex › stringify › module ${1:M} = ${2:{}};$0
+module
+ 
+M
+ = 
+{
+}
+;
+

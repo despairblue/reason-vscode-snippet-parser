@@ -1,0 +1,13 @@
+SnippetParserSedlex › stringify › let ${1:pattern} = {
+	$0
+};
+let
+ 
+pattern
+ = {
+\t
+
+
+
+}
+;

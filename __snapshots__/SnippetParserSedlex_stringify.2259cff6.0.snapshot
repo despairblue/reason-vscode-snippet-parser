@@ -1,0 +1,16 @@
+SnippetParserSedlex › stringify › let ${1:f} = (${2:pattern}) => {
+	${3:${2:pattern}}$0
+};
+let
+ 
+f
+ = (
+pattern
+) => {
+\t
+pattern
+
+
+
+}
+;

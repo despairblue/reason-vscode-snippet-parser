@@ -1,0 +1,5 @@
+SnippetParserSedlex › stringify › (${1:pattern}) => ${2:${1:pattern}}
+(
+pattern
+) => 
+pattern

@@ -1,0 +1,13 @@
+SnippetParserSedlex › stringify › type ${1:name} ${2:'${3:arg} }=
+	| ${4:Con${2: '${3:arg}}}
+	;'
+type
+ 
+name
+ 
+'arg 
+=
+\t| 
+Con 'arg
+
+\t;'

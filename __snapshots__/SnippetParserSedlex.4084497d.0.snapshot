@@ -1,0 +1,13 @@
+SnippetParserSedlex › module ${1:M} = {
+	$0
+};
+TEXT(module)
+TEXT( )
+PLACEHOLDER(${1:TEXT(M)})
+TEXT( = {
+\t)
+TABSTOP($0)
+TEXT(
+)
+TEXT(})
+TEXT(;)

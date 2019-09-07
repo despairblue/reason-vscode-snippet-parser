@@ -1,0 +1,13 @@
+SnippetParserSedlex › let ${1:pattern} = {
+	$0
+};
+TEXT(let)
+TEXT( )
+PLACEHOLDER(${1:TEXT(pattern)})
+TEXT( = {
+\t)
+TABSTOP($0)
+TEXT(
+)
+TEXT(})
+TEXT(;)

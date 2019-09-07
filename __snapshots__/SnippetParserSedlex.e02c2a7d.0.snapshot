@@ -1,0 +1,13 @@
+SnippetParserSedlex › type ${1:name} ${2:'${3:arg} }=
+	| ${4:Con${2: '${3:arg}}}
+	;'
+TEXT(type)
+TEXT( )
+PLACEHOLDER(${1:TEXT(name)})
+TEXT( )
+PLACEHOLDER(${2:TEXT(')PLACEHOLDER(${3:TEXT(arg)})TEXT( )})
+TEXT(=
+\t| )
+PLACEHOLDER(${4:TEXT(Con)PLACEHOLDER(${2:TEXT( ')PLACEHOLDER(${3:TEXT(arg)})})})
+TEXT(
+\t;')

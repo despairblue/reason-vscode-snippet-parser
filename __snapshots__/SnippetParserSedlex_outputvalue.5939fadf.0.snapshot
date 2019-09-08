@@ -1,0 +1,8 @@
+SnippetParserSedlex › output_value › let ${1:pattern} = ${2:()};$0
+TEXT(let)
+TEXT( )
+PLACEHOLDER(${1:TEXT(pattern)})
+TEXT( = )
+PLACEHOLDER(${2:TEXT(())})
+TEXT(;)
+TABSTOP($0)

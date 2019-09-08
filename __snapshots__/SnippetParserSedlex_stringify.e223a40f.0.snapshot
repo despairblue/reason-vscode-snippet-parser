@@ -1,0 +1,11 @@
+SnippetParserSedlex › stringify › module ${1:M} = {\n\t$0\n};
+module
+ 
+M
+ = {
+\t
+
+
+
+}
+;

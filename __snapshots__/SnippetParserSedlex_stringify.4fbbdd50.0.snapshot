@@ -1,0 +1,24 @@
+SnippetParserSedlex › stringify › module ${1:M} = (${2:X}: $3{:{}}) => {\n\t${4:include ${2:X}}\n\t$0\n};
+module
+ 
+M
+ = (
+X
+:
+ 
+
+{
+:
+{
+}
+}
+) => {
+\t
+include X
+
+\t
+
+
+
+}
+;

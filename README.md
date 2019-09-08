@@ -1,4 +1,5 @@
-[![Build Status](https://dev.azure.com/revery-ui/revery/_apis/build/status/revery-ui.rench?branchName=master)](https://dev.azure.com/revery-ui/revery/_build/latest?definitionId=14&branchName=master)
+[![Build Status](https://dev.azure.com/despairblue/reason-vscode-snippet-parser/_apis/build/status/despairblue.reason-vscode-snippet-parser?branchName=turn-to-reason-vscode-snippet-parser)](https://dev.azure.com/despairblue/reason-vscode-snippet-parser/_build/latest?definitionId=1&branchName=turn-to-reason-vscode-snippet-parser)
 
-# rench
-Reason Native Cross-platform Helpers - a Node-inspired API for Reason
+# reason-vscode-snippet-parser
+
+VSCode's snippet parsing logic, reimplemented as a standalone module.

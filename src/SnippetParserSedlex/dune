@@ -1,0 +1,23 @@
+(library
+    (name        SnippetParserSedlex)
+    (public_name Rench.SnippetParserSedlex)
+    (libraries
+       base
+       stdio
+       sedlex
+       compiler-libs.common
+       menhirLib
+    )
+    (virtual_deps menhir)
+    (preprocess
+      (
+        staged_pps 
+        ppx_import 
+        ppx_deriving.std 
+        ppx_enumerate 
+        sedlex.ppx
+      )
+    )
+ )
+ 
+(menhir (modules MenhirParser) )

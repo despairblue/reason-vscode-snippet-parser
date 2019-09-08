@@ -1,0 +1,2 @@
+SnippetParserSedlex › output_value › $name
+VARIABLE(${name:TEXT()})

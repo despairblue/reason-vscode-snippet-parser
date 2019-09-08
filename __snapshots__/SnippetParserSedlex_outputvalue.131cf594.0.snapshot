@@ -1,0 +1,9 @@
+SnippetParserSedlex › output_value › fun\n\t| ${1:pattern} => ${2:${1:pattern}}\n\t;
+TEXT(fun)
+TEXT(
+\t| )
+PLACEHOLDER(${1:TEXT(pattern)})
+TEXT( => )
+PLACEHOLDER(${2:PLACEHOLDER(${1:TEXT(pattern)})})
+TEXT(
+\t;)

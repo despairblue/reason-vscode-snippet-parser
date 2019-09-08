@@ -1,13 +1,13 @@
 {
   "name": "rench",
   "version": "1.9.0",
-  "description": "Reason Native Cross-platform Helpers - a Node-inspired API for Reason",
+  "description":
+    "Reason Native Cross-platform Helpers - a Node-inspired API for Reason",
   "main": "index.js",
   "esy": {
     "build": "refmterr dune build --root . -j4",
     "install": [
-        "esy-installer Rench.install",
-        "esy-installer Rench_Test.install"
+      "esy-installer Rench.install", "esy-installer Rench_Test.install"
     ]
   },
   "scripts": {
@@ -20,23 +20,21 @@
   },
   "author": "",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/bryphe/rench/issues"
-  },
+  "bugs": { "url": "https://github.com/bryphe/rench/issues" },
   "dependencies": {
-    "@opam/dune": "*",
-    "@opam/fpath": "^0.7.2",
-    "@opam/lambda-term": "*",
-    "@opam/lwt": "*",
     "@esy-ocaml/reason": "*",
-    "refmterr": "*",
-    "ocaml": "^4.6.0",
-    "@reason-native/console": "*",
-    "@reason-native/rely": "*"
+    "@opam/base": "v0.11.1",
+    "@opam/ppx_deriving": "4.4",
+    "@opam/ppx_enumerate": "v0.11.1",
+    "@opam/ppx_import": "1.6.2",
+    "@opam/sedlex": "2.1",
+    "@opam/stdio": "v0.11.0",
+    "refmterr": "*"
   },
   "devDependencies": {
+    "@reason-native/rely": "*",
     "@opam/merlin": "^3.2.2",
-    "ocaml": ">=4.6.0",
-    "@opam/dune": "^1.7.3"
+    "ocaml": "~4.7.0",
+    "@opam/dune": "^1.11.3"
   }
 }

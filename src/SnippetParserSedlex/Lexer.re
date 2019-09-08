@@ -6,8 +6,6 @@ type token = [%import: MenhirParser.token];
 /* use custom lexbuffer to keep track of source location */
 module Sedlexing = LexBuffer;
 open LexBuffer;
-open Stdio;
-// open Base;
 
 /** Signals a lexing error at the provided source location.  */
 
@@ -154,8 +152,6 @@ let parse = (buffer, p) => {
   let last_token = ref(Lexing.(EOF, dummy_pos, dummy_pos));
   let next_token = () => {
     last_token := loc_token(buffer);
-    let (token, _, _) = last_token^;
-    printf("%s\n", show_token(token));
     last_token^;
   };
   try(MenhirLib.Convert.Simplified.traditional2revised(p, next_token)) {

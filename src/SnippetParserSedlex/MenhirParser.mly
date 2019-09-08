@@ -52,7 +52,7 @@ placeholder:
   content = placeholder_inner
   CURLYCLOSE
   { 
-    Printf.printf "PLACEHOLDER\n";
+    (*Printf.printf "PLACEHOLDER\n";*)
     `Placeholder content
   };
   
@@ -61,7 +61,7 @@ placeholder_inner:
   COLON
   list(placeholder_inner_content) 
   { 
-    Printf.printf "PLACEHOLDER_INNER %s\n" $1;
+    (* Printf.printf "PLACEHOLDER_INNER %s\n" $1; *)
     ((int_of_string $1), $3) 
   };
   

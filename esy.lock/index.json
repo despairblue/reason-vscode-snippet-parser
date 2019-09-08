@@ -1,5 +1,5 @@
 {
-  "checksum": "f566721e632a9128bd02c05edc14e7a9",
+  "checksum": "24c52d4cbdc4f97e8463a1f46ab27071",
   "root": "rench@link-dev:./package.json",
   "node": {
     "rench@link-dev:./package.json": {
@@ -13,20 +13,17 @@
       },
       "overrides": [],
       "dependencies": [
-        "refmterr@3.2.2@d41d8cd9", "ocaml@4.7.1004@d41d8cd9",
-        "@reason-native/rely@3.1.0@d41d8cd9",
-        "@opam/stdio@opam:v0.11.0@3b11cb88",
+        "refmterr@3.2.2@d41d8cd9", "@opam/stdio@opam:v0.11.0@3b11cb88",
         "@opam/sedlex@opam:2.1@400920d8",
         "@opam/ppx_import@opam:1.6.2@e120a91c",
         "@opam/ppx_enumerate@opam:v0.11.1@729c072a",
         "@opam/ppx_deriving@opam:4.4@43678d5a",
-        "@opam/dune@opam:1.11.3@9894df55",
         "@opam/base@opam:v0.11.1@6ff71eb3",
         "@esy-ocaml/reason@3.5.0@d41d8cd9"
       ],
       "devDependencies": [
-        "ocaml@4.7.1004@d41d8cd9", "@opam/merlin@opam:3.3.2@7a364181",
-        "@opam/dune@opam:1.11.3@9894df55"
+        "ocaml@4.7.1004@d41d8cd9", "@reason-native/rely@3.1.0@d41d8cd9",
+        "@opam/merlin@opam:3.3.2@7a364181", "@opam/dune@opam:1.11.3@9894df55"
       ]
     },
     "refmterr@3.2.2@d41d8cd9": {

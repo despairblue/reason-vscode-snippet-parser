@@ -35,6 +35,6 @@
     "@reason-native/rely": "*",
     "@opam/merlin": "^3.2.2",
     "ocaml": "~4.7.0",
-    "@opam/dune": "^1.7.3"
+    "@opam/dune": "^1.11.3"
   }
 }

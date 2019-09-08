@@ -3,6 +3,9 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
+variables:
+  CI: true
+
 name: $(Build.SourceVersion)
 jobs:
   - job: Linux
@@ -22,6 +25,7 @@ jobs:
       - template: .ci/restore-build-cache.yml
       - template: .ci/esy-build-steps.yml
       - template: .ci/publish-build-cache.yml
+      - template: .ci/publish-test-results.yml
 
   - job: MacOS
     timeoutInMinutes: 0
@@ -40,6 +44,7 @@ jobs:
       - template: .ci/restore-build-cache.yml
       - template: .ci/esy-build-steps.yml
       - template: .ci/publish-build-cache.yml
+      - template: .ci/publish-test-results.yml
 
   - job: Windows
     timeoutInMinutes: 0
@@ -58,6 +63,7 @@ jobs:
       - template: .ci/restore-build-cache.yml
       - template: .ci/esy-build-steps.yml
       - template: .ci/publish-build-cache.yml
+      - template: .ci/publish-test-results.yml
 # - job: Release
 #   timeoutInMinutes: 0
 #   displayName: Release

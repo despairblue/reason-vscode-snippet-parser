@@ -38,7 +38,7 @@ let snippets = [
   ),
 ];
 
-describeOnly("SnippetParserSedlex", ({describe, _}) => {
+describe("SnippetParserSedlex", ({describe, _}) => {
   describe("extractTabstops", ({test, _}) => {
     List.iter(
       ((snippet, tabStopsList)) => {

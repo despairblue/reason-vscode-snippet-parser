@@ -1,26 +1,42 @@
 open Base;
 // open Stdio;
 
-type svalue = [
-  | `Text(string)
-  | `TabStop(int)
-  | `Placeholder(int, list(svalue))
-  | `Choice(int, list(string))
-  | `Variable(string, svalue)
-];
+type t =
+  | Tabstop(tabStop)
+  | Text(text)
+  | Placeholder(placeHolder)
+  | Choice(choice)
+  | Variable(variable)
+and tabStop = {
+  index: int,
+  text: ref(string),
+}
+and text = {text: string}
+and placeHolder = {
+  index: int,
+  children: list(t),
+}
+and choice = {
+  index: int,
+  options: list(string),
+}
+and variable = {
+  name: string,
+  content: t,
+};
 
 // TODO: variables with unnown strings should be converted into placeholders with an auto increasing index
 // number
 
-let rec stringify = svalue => {
+let rec stringify = (svalue: t) => {
   Printf.(
     switch (svalue) {
-    | `TabStop(_i) => ""
-    | `Placeholder(_index, (content: list(svalue))) =>
+    | Tabstop(_) => ""
+    | Placeholder({children: content, _}) =>
       sprintf("%s", stringify_placeholder_content(content))
-    | `Choice(_index, choices) => stringify_choices(choices)
-    | `Text(text) => text
-    | `Variable(_name, content) => stringify(content)
+    | Choice({options, _}) => stringify_choices(options)
+    | Text({text}) => text
+    | Variable({content, _}) => stringify(content)
     }
   );
 }
@@ -36,15 +52,15 @@ and stringify_choices = choices => {
   };
 };
 
-let rec output_value = svalue => {
+let rec output_value = (svalue: t) => {
   Printf.(
     switch (svalue) {
-    | `TabStop(i) => sprintf("TABSTOP($%d)", i)
-    | `Placeholder(index, (content: list(svalue))) =>
+    | Tabstop({index, _}) => sprintf("TABSTOP($%d)", index)
+    | Placeholder({index, children: (content: list(t))}) =>
       sprintf("PLACEHOLDER(${%d:%s})", index, print_content(content))
-    | `Choice(index, choices) => print_choices(index, choices)
-    | `Text(text) => sprintf("TEXT(%s)", text)
-    | `Variable(name, content) =>
+    | Choice({index, options}) => print_choices(index, options)
+    | Text({text}) => sprintf("TEXT(%s)", text)
+    | Variable({name, content}) =>
       sprintf("VARIABLE(${%s:%s})", name, output_value(content))
     }
   );
@@ -79,20 +95,20 @@ let printListOfInts = (~prefix="", list) => {
 };
 
 // returns the index of all tabStops in the svalues
-let extractTabstops = (svalues: list(svalue)): list(int) => {
-  let rec innerExtractTabstop = (~tabStopList=[], svalue: svalue): list(int) => {
+let extractTabstops = (svalues: list(t)): list(int) => {
+  let rec innerExtractTabstop = (~tabStopList=[], svalue: t): list(int) => {
     switch (svalue) {
-    | `TabStop(index) => [index, ...tabStopList]
-    | `Placeholder(index, (content: list(svalue))) => [
+    | Tabstop({index, _}) => [index, ...tabStopList]
+    | Placeholder({index, children: content}) => [
         index,
         ...List.concat([
              tabStopList,
              ...List.map(content, ~f=innerExtractTabstop),
            ]),
       ]
-    | `Choice(index, _choices) => [index, ...tabStopList]
-    | `Text(_text) => tabStopList
-    | `Variable(_name, (content: svalue)) =>
+    | Choice({index, _}) => [index, ...tabStopList]
+    | Text(_) => tabStopList
+    | Variable({content, _}) =>
       List.append(tabStopList, innerExtractTabstop(content))
     };
   };

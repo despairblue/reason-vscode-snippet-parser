@@ -1,6 +1,7 @@
 %{
 (* OCaml preamble *)
 (* open Base *)
+open Snippet
 %}
 
 %token DOLLAR
@@ -21,7 +22,7 @@
 
 /* %token <string> STRING */
 
-%start <Snippet.svalue list> prog
+%start <Snippet.t list> prog
 %%
 
 prog:
@@ -42,8 +43,8 @@ any:
 
 /* TABSTOP */
 tabstop:
-  | INT                      { `TabStop (int_of_string $1)}
-  | CURLYOPEN INT CURLYCLOSE { `TabStop (int_of_string $2)}
+  | INT                      { Tabstop({ index = (int_of_string $1); text = (ref "") })}
+  | CURLYOPEN INT CURLYCLOSE { Tabstop({ index = (int_of_string $2); text = (ref "") })}
   ;
 
 /* PLACEHOLDER */
@@ -52,8 +53,7 @@ placeholder:
   content = placeholder_inner
   CURLYCLOSE
   { 
-    (*Printf.printf "PLACEHOLDER\n";*)
-    `Placeholder content
+    Placeholder(content)
   };
   
 placeholder_inner:
@@ -61,15 +61,14 @@ placeholder_inner:
   COLON
   list(placeholder_inner_content) 
   { 
-    (* Printf.printf "PLACEHOLDER_INNER %s\n" $1; *)
-    ((int_of_string $1), $3) 
+    { index = (int_of_string $1); children = $3}
   };
   
 placeholder_inner_text:
-  | FORMAT       { `Text $1   }
-  | VARIABLENAME { `Text $1   } 
-  | CURLYOPEN    { `Text "{"  }
-  | COLON        { `Text ":"  }
+  | FORMAT       { Text({ text = $1  }) }
+  | VARIABLENAME { Text({ text = $1  }) } 
+  | CURLYOPEN    { Text({ text = "{" }) }
+  | COLON        { Text({ text = ":" }) }
   ;
   
 placeholder_inner_content:
@@ -88,34 +87,34 @@ choice:
         PIPE, 
         separated_nonempty_list(COMMA, VARIABLENAME), 
         PIPE
-      ) { ((int_of_string index), choices) }
+      ) { { index = (int_of_string index); options = choices } }
     ), 
     CURLYCLOSE
-  ) { `Choice vl};
+  ) { Choice(vl)};
   
 /* VARIABLE */
 variable:
-  | VARIABLENAME                      { `Variable ($1, (`Text "")) }
-  | CURLYOPEN VARIABLENAME CURLYCLOSE { `Variable ($2, (`Text "")) }
+  | VARIABLENAME                      { Variable({ name = $1; content = Text({ text = "" }) }) }
+  | CURLYOPEN VARIABLENAME CURLYCLOSE { Variable({ name = $2; content = Text({ text = "" }) }) }
   | CURLYOPEN 
     variable_inner
-    CURLYCLOSE { `Variable $2 };
+    CURLYCLOSE { Variable($2) };
   
 variable_inner:
   VARIABLENAME
   COLON
   any 
-  { ($1, $3) };
+  { { name = $1; content = $3 } };
 
 /* TEXT */
 outer_text:
-  | FORMAT       { `Text $1   }
-  | VARIABLENAME { `Text $1   } 
-  | BACKSLASH    { `Text "\\" }
-  | CURLYOPEN    { `Text "{"  }
-  | CURLYCLOSE   { `Text "}"  }
-  | COLON        { `Text ":"  }
-  | DOLLAR       { `Text "$"  }
+  | FORMAT       { Text({ text =  $1   }) }
+  | VARIABLENAME { Text({ text =  $1   }) } 
+  | BACKSLASH    { Text({ text =  "\\" }) }
+  | CURLYOPEN    { Text({ text =  "{"  }) }
+  | CURLYCLOSE   { Text({ text =  "}"  }) }
+  | COLON        { Text({ text =  ":"  }) }
+  | DOLLAR       { Text({ text =  "$"  }) }
   ;
   
 %%

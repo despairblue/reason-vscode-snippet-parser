@@ -1,2 +1,0 @@
-SnippetParserSedlex › output_value › ${name:default}
-VARIABLE(${name:TEXT(default)})

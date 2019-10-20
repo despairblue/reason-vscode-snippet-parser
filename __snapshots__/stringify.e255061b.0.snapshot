@@ -1,0 +1,8 @@
+stringify › type ${1:name} ${2:${3:'${4:arg} }= ${5:'${4:arg}}};$0
+type
+ 
+name
+ 
+'arg = 'arg
+;
+

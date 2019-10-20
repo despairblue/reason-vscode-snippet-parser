@@ -1,2 +1,0 @@
-SnippetParserSedlex › output_value › ${1|one,two,three|}
-CHOICE(${1|one,two,three|})

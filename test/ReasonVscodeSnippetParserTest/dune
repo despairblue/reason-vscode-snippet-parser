@@ -3,5 +3,5 @@
     (public_name ReasonVscodeSnippetParserTest)
     (flags (:standard (-w -39)))
     (ocamlopt_flags -linkall -g)
-    (libraries Rench rely.lib)
+    (libraries ReasonVscodeSnippetParser rely.lib)
 )

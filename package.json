@@ -7,7 +7,7 @@
   "esy": {
     "build": "refmterr dune build --root . -j4",
     "install": [
-      "esy-installer Rench.install", "esy-installer ReasonVscodeSnippetParserTest.install"
+      "esy-installer ReasonVscodeSnippetParser.install", "esy-installer ReasonVscodeSnippetParserTest.install"
     ]
   },
   "scripts": {

@@ -1,6 +1,6 @@
 (library
     (name        SnippetParserSedlex)
-    (public_name Rench.SnippetParserSedlex)
+    (public_name ReasonVscodeSnippetParser.SnippetParserSedlex)
     (flags (:standard -w -21 -w -30))
     (libraries
        base

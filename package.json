@@ -12,6 +12,7 @@
   },
   "scripts": {
     "test": "esy x TestRunner.exe",
+    "test:promote": "esy x TestRunner.exe -u",
     "format": "esy dune build @fmt --auto-promote"
   },
   "repository": {

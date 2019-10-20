@@ -1,6 +1,7 @@
 open TestFramework;
+open Base;
 
-module SnippetParserSedlex = ReasonVscodeSnippetParser.SnippetParserSedlex;
+open ReasonVscodeSnippetParser.SnippetParserSedlex;
 
 let snippets = [
   "$1",
@@ -26,36 +27,34 @@ let snippets = [
 describe("SnippetParserSedlex", ({describe, _}) => {
   describe("output_value", ({test, _}) => {
     List.iter(
-      snippet => {
-        test(
-          String.escaped(snippet),
-          ({expect, _}) => {
-            let svalues = SnippetParserSedlex.Parser.ast_of_string(snippet);
-            expect.lines(
-              List.map(SnippetParserSedlex.Snippet.output_value, svalues),
-            ).
-              toMatchSnapshot();
-          },
-        )
-      },
+      ~f=
+        snippet => {
+          test(
+            String.escaped(snippet),
+            ({expect, _}) => {
+              let svalues = Parser.ast_of_string(snippet);
+              expect.lines(List.map(~f=Snippet.output_value, svalues)).
+                toMatchSnapshot();
+            },
+          )
+        },
       snippets,
     )
   });
 
   describe("stringify", ({test, _}) => {
     List.iter(
-      snippet => {
-        test(
-          String.escaped(snippet),
-          ({expect, _}) => {
-            let svalues = SnippetParserSedlex.Parser.ast_of_string(snippet);
-            expect.lines(
-              List.map(SnippetParserSedlex.Snippet.stringify, svalues),
-            ).
-              toMatchSnapshot();
-          },
-        )
-      },
+      ~f=
+        snippet => {
+          test(
+            String.escaped(snippet),
+            ({expect, _}) => {
+              let svalues = Parser.ast_of_string(snippet);
+              expect.lines(List.map(~f=Snippet.stringify, svalues)).
+                toMatchSnapshot();
+            },
+          )
+        },
       snippets,
     )
   });

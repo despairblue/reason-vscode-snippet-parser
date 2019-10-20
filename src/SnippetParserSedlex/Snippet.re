@@ -31,7 +31,7 @@ and variable = {
 let rec stringify = (svalue: t) => {
   Printf.(
     switch (svalue) {
-    | Tabstop(_) => ""
+    | Tabstop({text, _}) => text^
     | Placeholder({children: content, _}) =>
       sprintf("%s", stringify_placeholder_content(content))
     | Choice({options, _}) => stringify_choices(options)
@@ -50,6 +50,10 @@ and stringify_choices = choices => {
   | [hd, ..._rest] => hd
   | _ => ""
   };
+};
+
+let stringify_list = (svalues: list(t)): string => {
+  List.map(svalues, ~f=stringify) |> String.concat;
 };
 
 let rec output_value = (svalue: t) => {
@@ -117,4 +121,40 @@ let extractTabstops = (svalues: list(t)): list(int) => {
   |> List.map(~f=innerExtractTabstop)
   |> List.concat
   |> List.dedup_and_sort(~compare=(a, b) => a - b);
+};
+
+let rec map = (~f, svalue) => {
+  switch (svalue) {
+  | Tabstop(content) => f(Tabstop(content))
+  | Placeholder(content) =>
+    Placeholder({
+      ...content,
+      children: List.map(content.children, ~f=map(~f)),
+    })
+  | Choice(content) => f(Choice(content))
+  | Text(content) => f(Text(content))
+  | Variable(content) => f(Variable(content))
+  };
+};
+
+let changeTapstop = (svalues: list(t), ~index: int, ~value: string) => {
+  // Printf.sprintf("index: %i, value: %s", index, value) |> print_endline;
+
+  let newSvalues =
+    List.map(svalues, ~f=(svalue: t) => {
+      map(svalue, ~f=(svalue: t) => {
+        // Printf.sprintf("svalue: %s", output_value(svalue)) |> print_endline;
+        switch (svalue) {
+        | Tabstop({index: tabStopIndex, text: tabStopText}) =>
+          if (tabStopIndex == index) {
+            Tabstop({index: tabStopIndex, text: ref(value)});
+          } else {
+            Tabstop({index: tabStopIndex, text: tabStopText});
+          }
+        | _ => svalue
+        }
+      })
+    });
+
+  newSvalues;
 };

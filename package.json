@@ -1,5 +1,5 @@
 {
-  "name": "rench",
+  "name": "reason-vscode-snippet-parser",
   "version": "1.9.0",
   "description":
     "Reason Native Cross-platform Helpers - a Node-inspired API for Reason",
@@ -7,11 +7,12 @@
   "esy": {
     "build": "refmterr dune build --root . -j4",
     "install": [
-      "esy-installer Rench.install", "esy-installer Rench_Test.install"
+      "esy-installer ReasonVscodeSnippetParser.install", "esy-installer ReasonVscodeSnippetParserTest.install"
     ]
   },
   "scripts": {
     "test": "esy x TestRunner.exe",
+    "test:promote": "esy x TestRunner.exe -u",
     "format": "esy dune build @fmt --auto-promote"
   },
   "repository": {

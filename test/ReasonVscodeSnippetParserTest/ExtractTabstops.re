@@ -1,6 +1,6 @@
 open TestFramework;
 
-module SnippetParserSedlex = Rench.SnippetParserSedlex;
+module SnippetParserSedlex = ReasonVscodeSnippetParser.SnippetParserSedlex;
 
 let snippets = [
   ("$1", [1]),

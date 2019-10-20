@@ -1,7 +1,7 @@
 switch (Sys.getenv_opt("CI")) {
 | Some(_) =>
   print_endline("\nSOME\n");
-  Rench_Test.TestFramework.run(
+  ReasonVscodeSnippetParserTest.TestFramework.run(
     Rely.RunConfig.(
       initialize()
       /* causes tests to fail if testOnly or describeOnly are used to prevent
@@ -16,5 +16,5 @@ switch (Sys.getenv_opt("CI")) {
          ])
     ),
   );
-| None => Rench_Test.TestFramework.cli()
+| None => ReasonVscodeSnippetParserTest.TestFramework.cli()
 };

@@ -1,0 +1,7 @@
+(library
+    (name ReasonVscodeSnippetParserTest)
+    (public_name ReasonVscodeSnippetParserTest)
+    (flags (:standard (-w -39)))
+    (ocamlopt_flags -linkall -g)
+    (libraries ReasonVscodeSnippetParser rely.lib)
+)

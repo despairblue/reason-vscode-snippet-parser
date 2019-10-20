@@ -1,0 +1,7 @@
+opam-version: "1.2"
+version: "dev"
+maintainer: "despair.blue@gmail.com"
+author: ["Danny Martini"]
+build: [
+
+]

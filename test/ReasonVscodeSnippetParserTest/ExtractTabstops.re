@@ -1,6 +1,6 @@
 open TestFramework;
 
-module SnippetParserSedlex = ReasonVscodeSnippetParser.SnippetParserSedlex;
+open ReasonVscodeSnippetParser.SnippetParserSedlex;
 
 let snippets = [
   ("$1", [1]),
@@ -45,10 +45,9 @@ describe("SnippetParserSedlex", ({describe, _}) => {
         test(
           String.escaped(snippet),
           ({expect, _}) => {
-            let svalues = SnippetParserSedlex.Parser.ast_of_string(snippet);
+            let svalues = Parser.ast_of_string(snippet);
 
-            let tabStops =
-              SnippetParserSedlex.Snippet.extractTabstops(svalues);
+            let tabStops = Snippet.extractTabstops(svalues);
             expect.list(tabStops).toEqual(tabStopsList);
           },
         )

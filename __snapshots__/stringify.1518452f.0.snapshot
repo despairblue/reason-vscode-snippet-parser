@@ -1,0 +1,13 @@
+stringify › switch ${1:scrutinee} {\n| ${2:pattern} => ${3:${2:pattern}}\n};
+switch
+ 
+scrutinee
+ {
+| 
+pattern
+ => 
+pattern
+
+
+}
+;

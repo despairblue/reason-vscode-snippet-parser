@@ -1,0 +1,13 @@
+output_value › switch ${1:scrutinee} {\n| ${2:pattern} => ${3:${2:pattern}}\n};
+TEXT(switch)
+TEXT( )
+PLACEHOLDER(${1:TEXT(scrutinee)})
+TEXT( {
+| )
+PLACEHOLDER(${2:TEXT(pattern)})
+TEXT( => )
+PLACEHOLDER(${3:PLACEHOLDER(${2:TEXT(pattern)})})
+TEXT(
+)
+TEXT(})
+TEXT(;)

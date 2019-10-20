@@ -1,8 +1,0 @@
-SnippetParserSedlex › output_value › type ${1:name} ${2:${3:'${4:arg} }= ${5:'${4:arg}}};$0
-TEXT(type)
-TEXT( )
-PLACEHOLDER(${1:TEXT(name)})
-TEXT( )
-PLACEHOLDER(${2:PLACEHOLDER(${3:TEXT(')PLACEHOLDER(${4:TEXT(arg)})TEXT( )})TEXT(= )PLACEHOLDER(${5:TEXT(')PLACEHOLDER(${4:TEXT(arg)})})})
-TEXT(;)
-TABSTOP($0)

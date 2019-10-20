@@ -1,0 +1,11 @@
+output_value › module ${1:M} = {\n\t$0\n};
+TEXT(module)
+TEXT( )
+PLACEHOLDER(${1:TEXT(M)})
+TEXT( = {
+\t)
+TABSTOP($0)
+TEXT(
+)
+TEXT(})
+TEXT(;)

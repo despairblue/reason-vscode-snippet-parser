@@ -1,0 +1,2 @@
+output_value › ${1:hi}
+PLACEHOLDER(${1:TEXT(hi)})

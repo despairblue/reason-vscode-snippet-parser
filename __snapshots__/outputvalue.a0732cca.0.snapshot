@@ -1,0 +1,24 @@
+output_value › module ${1:M} = (${2:X}: $3{:{}}) => {\n\t${4:include ${2:X}}\n\t$0\n};
+TEXT(module)
+TEXT( )
+PLACEHOLDER(${1:TEXT(M)})
+TEXT( = ()
+PLACEHOLDER(${2:TEXT(X)})
+TEXT(:)
+TEXT( )
+TABSTOP($3)
+TEXT({)
+TEXT(:)
+TEXT({)
+TEXT(})
+TEXT(})
+TEXT() => {
+\t)
+PLACEHOLDER(${4:TEXT(include)TEXT( )PLACEHOLDER(${2:TEXT(X)})})
+TEXT(
+\t)
+TABSTOP($0)
+TEXT(
+)
+TEXT(})
+TEXT(;)

@@ -38,21 +38,19 @@ let snippets = [
   ),
 ];
 
-describe("SnippetParserSedlex", ({describe, _}) => {
-  describe("extractTabstops", ({test, _}) => {
-    List.iter(
-      ((snippet, tabStopsList)) => {
-        test(
-          String.escaped(snippet),
-          ({expect, _}) => {
-            let svalues = Parser.ast_of_string(snippet);
+describe("extractTabstops", ({test, _}) => {
+  List.iter(
+    ((snippet, tabStopsList)) => {
+      test(
+        String.escaped(snippet),
+        ({expect, _}) => {
+          let svalues = Parser.ast_of_string(snippet);
 
-            let tabStops = Snippet.extractTabstops(svalues);
-            expect.list(tabStops).toEqual(tabStopsList);
-          },
-        )
-      },
-      snippets,
-    )
-  })
+          let tabStops = Snippet.extractTabstops(svalues);
+          expect.list(tabStops).toEqual(tabStopsList);
+        },
+      )
+    },
+    snippets,
+  )
 });

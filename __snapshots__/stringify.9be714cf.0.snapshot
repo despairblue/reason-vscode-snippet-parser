@@ -1,0 +1,11 @@
+stringify › let ${1:pattern} = {\n\t$0\n};
+let
+ 
+pattern
+ = {
+\t
+
+
+
+}
+;

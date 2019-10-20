@@ -1,0 +1,10 @@
+output_value › let ${1:f} = (${2:pattern}) => ${3:${2:pattern}};$0
+TEXT(let)
+TEXT( )
+PLACEHOLDER(${1:TEXT(f)})
+TEXT( = ()
+PLACEHOLDER(${2:TEXT(pattern)})
+TEXT() => )
+PLACEHOLDER(${3:PLACEHOLDER(${2:TEXT(pattern)})})
+TEXT(;)
+TABSTOP($0)

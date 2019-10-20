@@ -1,0 +1,9 @@
+stringify › fun\n\t| ${1:pattern} => ${2:${1:pattern}}\n\t;
+fun
+
+\t| 
+pattern
+ => 
+pattern
+
+\t;

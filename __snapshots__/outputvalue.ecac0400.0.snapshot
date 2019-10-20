@@ -1,0 +1,11 @@
+output_value › let ${1:pattern} = {\n\t$0\n};
+TEXT(let)
+TEXT( )
+PLACEHOLDER(${1:TEXT(pattern)})
+TEXT( = {
+\t)
+TABSTOP($0)
+TEXT(
+)
+TEXT(})
+TEXT(;)

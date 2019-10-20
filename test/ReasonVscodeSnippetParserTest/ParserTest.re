@@ -24,38 +24,36 @@ let snippets = [
   "type ${1:name} ${2:'${3:arg} }=\n\t| ${4:Con${2: '${3:arg}}}\n\t;'",
 ];
 
-describe("SnippetParserSedlex", ({describe, _}) => {
-  describe("output_value", ({test, _}) => {
-    List.iter(
-      ~f=
-        snippet => {
-          test(
-            String.escaped(snippet),
-            ({expect, _}) => {
-              let svalues = Parser.ast_of_string(snippet);
-              expect.lines(List.map(~f=Snippet.output_value, svalues)).
-                toMatchSnapshot();
-            },
-          )
-        },
-      snippets,
-    )
-  });
+describe("output_value", ({test, _}) => {
+  List.iter(
+    ~f=
+      snippet => {
+        test(
+          String.escaped(snippet),
+          ({expect, _}) => {
+            let svalues = Parser.ast_of_string(snippet);
+            expect.lines(List.map(~f=Snippet.output_value, svalues)).
+              toMatchSnapshot();
+          },
+        )
+      },
+    snippets,
+  )
+});
 
-  describe("stringify", ({test, _}) => {
-    List.iter(
-      ~f=
-        snippet => {
-          test(
-            String.escaped(snippet),
-            ({expect, _}) => {
-              let svalues = Parser.ast_of_string(snippet);
-              expect.lines(List.map(~f=Snippet.stringify, svalues)).
-                toMatchSnapshot();
-            },
-          )
-        },
-      snippets,
-    )
-  });
+describe("stringify", ({test, _}) => {
+  List.iter(
+    ~f=
+      snippet => {
+        test(
+          String.escaped(snippet),
+          ({expect, _}) => {
+            let svalues = Parser.ast_of_string(snippet);
+            expect.lines(List.map(~f=Snippet.stringify, svalues)).
+              toMatchSnapshot();
+          },
+        )
+      },
+    snippets,
+  )
 });

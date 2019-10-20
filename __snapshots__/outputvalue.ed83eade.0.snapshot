@@ -1,0 +1,9 @@
+output_value › module ${1:M} = ${2:{}};$0
+TEXT(module)
+TEXT( )
+PLACEHOLDER(${1:TEXT(M)})
+TEXT( = )
+PLACEHOLDER(${2:TEXT({)})
+TEXT(})
+TEXT(;)
+TABSTOP($0)

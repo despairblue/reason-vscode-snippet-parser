@@ -1,0 +1,5 @@
+output_value › (${1:pattern}) => ${2:${1:pattern}}
+TEXT(()
+PLACEHOLDER(${1:TEXT(pattern)})
+TEXT() => )
+PLACEHOLDER(${2:PLACEHOLDER(${1:TEXT(pattern)})})

@@ -1,0 +1,8 @@
+stringify › let ${1:pattern} = ${2:()};$0
+let
+ 
+pattern
+ = 
+()
+;
+
